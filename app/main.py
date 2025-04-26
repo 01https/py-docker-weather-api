@@ -8,6 +8,8 @@ load_dotenv()
 URL = "https://api.weatherapi.com/v1/current.json?"
 FILTERING = "Paris"
 API_KEY = os.getenv("API_KEY")
+if not API_KEY:
+    raise Exception("API_KEY is not set")
 
 
 def get_weather() -> None:
